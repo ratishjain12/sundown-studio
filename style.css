@@ -17,11 +17,16 @@
 html,
 body {
   width: 100%;
-  background-color: #efeae3;
   height: 100%;
 }
 
+#main {
+  position: relative;
+  z-index: 10;
+}
+
 #page1 {
+  background-color: #efeae3;
   width: 100%;
   min-height: 100vh;
   position: relative;
@@ -182,6 +187,7 @@ nav {
 }
 
 #page2 {
+  background-color: #efeae3;
   min-height: 100vh;
   width: 100%;
 }
@@ -191,7 +197,7 @@ nav {
 #moving-text {
   overflow-x: auto;
   white-space: nowrap;
-  margin: 4vw 0vw;
+  padding: 4vw 0vw;
 }
 #con {
   white-space: nowrap;
@@ -260,10 +266,13 @@ nav {
 }
 
 #page3 {
-  margin-top: 6vw;
-  height: 100vh;
+  background-color: #efeae3;
+  padding-top: 6vw;
+  min-height: 100vh;
+  padding-bottom: 2vw;
   width: 100%;
 }
+
 #gooey {
   width: 30vw;
   height: 30vw;
@@ -321,16 +330,193 @@ nav {
   border-radius: 0%;
   color: white;
 }
-
-#page3 > h4 {
-  font-weight: 100;
+#page-3-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   margin-left: 2vw;
   margin-bottom: 2vw;
 }
 
-#page3 > span {
-  height: 30px;
-  width: 30px;
-  background-color: #cd400d;
+#page-3-header > h4 {
+  font-weight: 100;
+}
+
+#dot {
+  height: 10px;
+  width: 10px;
+  background-color: #e11811;
   border-radius: 50%;
+}
+
+#elem {
+  display: flex;
+  justify-content: space-between;
+}
+
+#elem-right {
+  text-align: end;
+  z-index: 10;
+}
+
+#elem-right p {
+  color: rgb(109, 105, 105);
+  font-weight: 100;
+}
+
+#page3 > h4 {
+  border: 1px solid #917e78dc;
+  padding: 13px 21px;
+  position: relative;
+  display: inline-block;
+  border-radius: 50px;
+  margin: 35px 24px;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+#page3 > h4::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  bottom: -100%;
+  background-color: black;
+  border-radius: 50%;
+}
+
+#page3 > h4:hover::after {
+  bottom: 0;
+  border-radius: 0;
+  transition: all 0.4s ease;
+}
+
+#page3 > h4 a {
+  position: relative;
+  text-decoration: none;
+  color: black;
+  z-index: 10;
+}
+
+#page3 > h4:hover a {
+  color: white;
+  z-index: 10;
+}
+
+#image-container {
+  position: fixed;
+  height: 25vw;
+  width: 20vw;
+  z-index: 20;
+  background-position: center;
+  background-size: cover;
+  border-radius: 30px;
+  top: 30%;
+  left: 55%;
+  display: none;
+}
+
+#page4 {
+  background-color: #efeae3;
+  min-height: 60vh;
+  width: 100%;
+}
+
+#page5 {
+  min-height: 100vh;
+  width: 100%;
+  pointer-events: all;
+}
+
+#footer {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background-color: black;
+  color: white;
+  bottom: 0;
+  z-index: 9;
+  display: flex;
+  pointer-events: auto;
+  flex-direction: column;
+  justify-content: end;
+}
+
+#footer-div {
+  padding: 2vw 4vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+#footer h1 {
+  position: relative;
+  font-size: 24vw;
+  z-index: 10;
+}
+
+#footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+#footer-left a {
+  text-decoration: none;
+  color: white;
+  font-size: 2vw;
+}
+#email {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#email h4 {
+  font-weight: 100;
+  max-width: 70%;
+}
+
+#email input {
+  background-color: transparent;
+  border: 1px solid white;
+  padding: 10px 20px;
+  outline: none;
+  max-width: 50%;
+  color: white;
+}
+#email input::placeholder {
+  color: white;
+}
+
+#footer-gooey1 {
+  position: absolute;
+  width: 100vw;
+  height: 70vw;
+  filter: blur(20px);
+  top: -40%;
+  left: -50%;
+  transform: rotate(-20deg);
+  background-color: #e11811;
+}
+
+#footer-gooey2 {
+  position: absolute;
+  width: 120vw;
+  height: 70vw;
+  filter: blur(20px);
+  top: -40%;
+  right: -60%;
+  transform: rotate(30deg);
+  background-color: #e11811;
+}
+
+@keyframes gooey1 {
+  from {
+  }
+  to {
+  }
 }
